@@ -33,10 +33,10 @@
         }
 
         .glassmorphism {
-            background: rgba(30, 41, 59, 0.4);
+            background: rgba(62, 39, 35, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
+            border: 1px solid rgba(210, 180, 140, 0.1);
         }
 
         .project-card {
@@ -45,7 +45,7 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 20px 40px rgba(160, 82, 45, 0.2);
         }
 
         .timeline-item {
@@ -60,7 +60,7 @@
             top: 3rem;
             bottom: -2rem;
             width: 2px;
-            background: linear-gradient(180deg, #3b82f6 0%, rgba(59, 130, 246, 0.1) 100%);
+            background: linear-gradient(180deg, #A0522D 0%, rgba(160, 82, 45, 0.1) 100%);
         }
 
         .timeline-item:last-child::before {
@@ -73,10 +73,10 @@
             top: 1.5rem;
             width: 1rem;
             height: 1rem;
-            background: #3b82f6;
+            background: #A0522D;
             border-radius: 50%;
             border: 3px solid #0f172a;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 0 4px rgba(160, 82, 45, 0.2);
         }
 
         .skill-tag {
@@ -84,7 +84,7 @@
         }
 
         .skill-tag:hover {
-            background: #3b82f6;
+            background: #A0522D;
             transform: scale(1.05);
         }
 
@@ -94,15 +94,15 @@
 
         .contact-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 25px rgba(160, 82, 45, 0.3);
         }
 
         .image-placeholder {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(148, 163, 184, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(210, 180, 140, 0.15) 0%, rgba(139, 69, 19, 0.1) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #64748b;
+            color: #A0522D;
             font-size: 0.875rem;
         }
 
@@ -153,9 +153,9 @@
         }
 
         .lightbox-close:hover {
-            background: rgba(59, 130, 246, 0.9);
+            background: rgba(160, 82, 45, 0.9);
             transform: rotate(90deg);
-            border-color: #3b82f6;
+            border-color: #A0522D;
         }
 
         .project-card img {
@@ -168,12 +168,12 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 min-h-screen">
+<body class="min-h-screen text-slate-200" style="background: linear-gradient(135deg, #1a1410 0%, #0f0d0b 100%);">
 
     <!-- Hero Section -->
     <header class="container mx-auto px-4 py-12 md:py-20">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-800 bg-clip-text text-transparent">
                 Obaidullah Nasir
             </h1>
             <p class="text-xl md:text-2xl text-slate-300 mb-3">
@@ -207,7 +207,7 @@
     <!-- Glassmorphism Tab Navigation -->
     <nav class="sticky top-4 z-50 container mx-auto px-4 mb-12">
         <div class="max-w-2xl mx-auto glassmorphism rounded-2xl p-2 flex gap-2">
-            <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-blue-500 text-white">
+            <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-amber-700 text-white">
                 <div class="flex items-center justify-center gap-2">
                     <i data-lucide="briefcase" class="w-4 h-4"></i>
                     <span>Projects</span>
@@ -237,7 +237,7 @@
             <!-- Section A: Industrial AI (VisionRD) -->
             <section class="mb-16">
                 <div class="flex items-center gap-3 mb-8">
-                    <i data-lucide="factory" class="w-8 h-8 text-blue-500"></i>
+                    <i data-lucide="factory" class="w-8 h-8 text-amber-700"></i>
                     <h2 class="text-3xl md:text-4xl font-bold">Industrial AI</h2>
                     <span class="text-sm text-slate-400 mt-2">VisionRD</span>
                 </div>
@@ -251,9 +251,9 @@
                             <h3 class="text-xl font-bold mb-2">Haval vFuseAct - A Custom Vision Model for Real-time Action Segmentation</h3>
                             <p class="text-slate-400 mb-4">Real-time action segmentation for automotive assembly using dual-head MemoryTCN on Raspberry Pi. Optimized for edge deployment with millisecond-level inference.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">MemoryTCN</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Raspberry Pi</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Real-time</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">MemoryTCN</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Raspberry Pi</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Real-time</span>
                             </div>
                         </div>
                     </div>
@@ -263,11 +263,11 @@
                         <img id="img-toyota" src="" alt="Toyota Forgery Detection" class="w-full h-80 object-cover image-placeholder">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Toyota Forgery Detection</h3>
-                            <p class="text-slate-400 mb-4">OCR + LLM system for document verification, achieving 98% accuracy and 11 seconds per document time. Automated authenticity validation for high-volume manufacturing documentation, reducing manual checking by 95%..</p>
+                            <p class="text-slate-400 mb-4">OCR + LLM system for document verification, achieving 98% accuracy and 11 seconds per document time. Automated authenticity validation for high-volume manufacturing documentation, reducing manual checking by 95%.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">OCR</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">LLM</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">98% Accuracy</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">OCR</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">LLM</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">98% Accuracy</span>
                             </div>
                         </div>
                     </div>
@@ -279,9 +279,9 @@
                             <h3 class="text-xl font-bold mb-2">RAG based Marketing/ After Sales Enterprise System</h3>
                             <p class="text-slate-400 mb-4">Production-grade marketing/ after sales intelligence tool interconnecting internal dealership data, social media platforms and whatsapp. Automated competitive analysis and market trend detection. Deployed at two major automotive plants in Pakistan.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">RAG</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Multi-Modal</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Agentic AI</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">RAG</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Multi-Modal</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Agentic AI</span>
                             </div>
                         </div>
                     </div>
@@ -293,9 +293,9 @@
                             <h3 class="text-xl font-bold mb-2">Machine Vision based PCB Inspection</h3>
                             <p class="text-slate-400 mb-4">Custom Computer Vision architecture for real-time defect detection on 10M+ PCBs/year. Reduced false positives by 87% compared to traditional methods. Deployed at major PCB manufacturing facility in Pakistan.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Computer Vision</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Real-time</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">10M+ PCBs</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Computer Vision</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Real-time</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">10M+ PCBs</span>
                             </div>
                         </div>
                     </div>
@@ -306,7 +306,7 @@
             <!-- Section B: Enterprise Software Solutions -->
             <section class="mb-16">
                 <div class="flex items-center gap-3 mb-8">
-                    <i data-lucide="building-2" class="w-8 h-8 text-blue-500"></i>
+                    <i data-lucide="building-2" class="w-8 h-8 text-amber-700"></i>
                     <h2 class="text-3xl md:text-4xl font-bold">Enterprise Software Solutions</h2>
                     <span class="text-sm text-slate-400 mt-2">Full-Stack AI Applications</span>
                 </div>
@@ -320,10 +320,10 @@
                             <h3 class="text-xl font-bold mb-2">AI-Powered Meeting Intelligence System</h3>
                             <p class="text-slate-400 mb-4">Real-time transcription using Whisper model integrated with Google Meet audio streams. LLM generates intelligent meeting summaries, extracts action items, and automates follow-up workflows via Gmail API. Automatically drafts client emails, schedules reminders, and creates task assignments, reducing post-meeting workload by 80%.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Whisper</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">LLM</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Gmail API</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Automation</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Whisper</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">LLM</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Gmail API</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Automation</span>
                             </div>
                         </div>
                     </div>
@@ -335,10 +335,10 @@
                             <h3 class="text-xl font-bold mb-2">Natural Language SQL Generator</h3>
                             <p class="text-slate-400 mb-4">LLM-powered query generation system for major construction company in Saudi Arabia. Intelligently navigates 1000+ CSV files, auto-detects relevant data sources, and generates/executes SQL queries from natural language. Reduced data retrieval time by 95%.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">NLP</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">SQL</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">LLM</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">1000+ Files</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">NLP</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">SQL</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">LLM</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">1000+ Files</span>
                             </div>
                         </div>
                     </div>
@@ -349,7 +349,7 @@
             <!-- Section C: Defense & Simulation -->
             <section>
                 <div class="flex items-center gap-3 mb-8">
-                    <i data-lucide="shield" class="w-8 h-8 text-blue-500"></i>
+                    <i data-lucide="shield" class="w-8 h-8 text-amber-700"></i>
                     <h2 class="text-3xl md:text-4xl font-bold">Defense & Simulation</h2>
                     <span class="text-sm text-slate-400 mt-2">Ministry of Defense</span>
                 </div>
@@ -371,9 +371,9 @@
                             <h3 class="text-xl font-bold mb-2">IITS Simulator</h3>
                             <p class="text-slate-400 mb-4">High-fidelity training simulator using Real Virtuality 4 physics engine. Delivers immersive tactical training scenarios with realistic ballistics and environmental modeling.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Real Virtuality 4</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Simulation</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Military-Grade</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Real Virtuality 4</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Simulation</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Military-Grade</span>
                             </div>
                         </div>
                     </div>
@@ -385,10 +385,10 @@
                             <h3 class="text-xl font-bold mb-2">Military Fleet Logistics System</h3>
                             <p class="text-slate-400 mb-4">CV + LiDAR-based logistics automation for military fleet of 3,000+ vehicles. Sensor fusion for real-time inventory tracking and automated spare parts planning, eliminating manual workflows.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Computer Vision</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">LiDAR</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Sensor Fusion</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">3000+ Vehicles</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Computer Vision</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">LiDAR</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Sensor Fusion</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">3000+ Vehicles</span>
                             </div>
                         </div>
                     </div>
@@ -400,10 +400,10 @@
                             <h3 class="text-xl font-bold mb-2">Military Offline RAG</h3>
                             <p class="text-slate-400 mb-4">GPU-accelerated LLaMA 3 8B deployment on NVIDIA RTX 5060, delivering real-time responses with optimized inference pipeline in air-gapped environments. Secure conversational search over classified PDFs with zero-trust architecture enabling natural language queries across restricted document repositories.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">LLaMA 3</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Air-Gapped</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">RAG</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-blue-400">Classified</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">LLaMA 3</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Air-Gapped</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">RAG</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-amber-600">Classified</span>
                             </div>
                         </div>
                     </div>
@@ -427,11 +427,11 @@
                             <img id="logo-nust" src="" alt="NUST Logo" class="w-16 h-16 rounded-lg object-cover image-placeholder" style="min-width: 4rem; min-height: 4rem;">
                             <div>
                                 <h3 class="text-2xl font-bold">BE Electrical Engineering</h3>
-                                <p class="text-blue-400">NUST - National University of Sciences & Technology</p>
+                                <p class="text-amber-600">NUST - National University of Sciences & Technology</p>
                                 <p class="text-slate-400 text-sm">2016 - 2020</p>
                             </div>
                         </div>
-                        <div class="bg-slate-900 rounded-lg p-4 border-l-4 border-blue-500">
+                        <div class="bg-slate-900 rounded-lg p-4 border-l-4 border-amber-700">
                             <p class="text-slate-300"><strong>High Achiever Award Recipient</strong></p>
                             <p class="text-slate-400 mt-1">CGPA: 3.52/4.0</p>
                         </div>
@@ -446,21 +446,21 @@
                             <img id="logo-mod" src="" alt="Ministry of Defense Logo" class="w-16 h-16 rounded-lg object-cover image-placeholder" style="min-width: 4rem; min-height: 4rem;">
                             <div>
                                 <h3 class="text-2xl font-bold">Design Engineer & Technical Project Manager</h3>
-                                <p class="text-blue-400">Ministry of Defense</p>
+                                <p class="text-amber-600">Ministry of Defense</p>
                                 <p class="text-slate-400 text-sm">November 2020 - January 2025</p>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Led military-grade R&D projects from concept to deployment</p>
                             </div>
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Managed teams of 250+ technicians across multiple production facilities</p>
                             </div>
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Developed secure AI systems for classified defense applications</p>
                             </div>
                         </div>
@@ -475,7 +475,7 @@
                             <img id="logo-case" src="" alt="CASE Institute Logo" class="w-16 h-16 rounded-lg object-cover image-placeholder" style="min-width: 4rem; min-height: 4rem;">
                             <div>
                                 <h3 class="text-2xl font-bold">MS Engineering Management</h3>
-                                <p class="text-blue-400">CASE Institute of Technology</p>
+                                <p class="text-amber-600">CASE Institute of Technology</p>
                                 <p class="text-slate-400 text-sm">2022 - 2024</p>
                             </div>
                         </div>
@@ -486,35 +486,35 @@
                 <!-- Timeline Item 4: VisionRD -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="glassmorphism rounded-2xl p-6 border-2 border-blue-500">
+                    <div class="glassmorphism rounded-2xl p-6 border-2 border-amber-700">
                         <div class="flex items-start gap-4 mb-4">
                             <img id="logo-visionrd" src="" alt="VisionRD Logo" class="w-16 h-16 rounded-lg object-cover image-placeholder" style="min-width: 4rem; min-height: 4rem;">
                             <div>
                                 <h3 class="text-2xl font-bold">Senior AI Engineer</h3>
-                                <p class="text-blue-400">VisionRD</p>
+                                <p class="text-amber-600">VisionRD</p>
                                 <p class="text-slate-400 text-sm">June 2025 - Present</p>
-                                <span class="inline-block mt-2 px-3 py-1 bg-blue-500 text-white text-xs rounded-full">Current Position</span>
+                                <span class="inline-block mt-2 px-3 py-1 bg-amber-700 text-white text-xs rounded-full">Current Position</span>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Deployed vFuseAct dual-head MemoryTCN model on Raspberry Pi Zero 2W at 30 FPS for HAVAL automotive plant, reducing human errors by 33%</p>
                             </div>
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Developed Forgery Detection System using OCR+LLM for Toyota plant, achieving 98% accuracy and 70% reduction in manual verification</p>
                             </div>
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Built PCB Defect Detection System for RapidEV inspecting 10-15 million PCBs per year in real time</p>
                             </div>
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Implemented GriTS evaluation framework with Landing AI to benchmark table structure recognition models</p>
                             </div>
                             <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-blue-500 mt-0.5"></i>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-amber-700 mt-0.5"></i>
                                 <p class="text-slate-300">Researching state-of-the-art Computer Vision, NLP/LLM, RAG, Agentic AI, and Multi-Modal architectures for production deployment</p>
                             </div>
                         </div>
@@ -535,39 +535,39 @@
 
                 <!-- Email -->
                 <a href="mailto:obaidnasir01@gmail.com" class="contact-btn flex items-center gap-4 p-6 bg-slate-800 rounded-xl mb-4 hover:bg-slate-700">
-                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <div class="w-12 h-12 bg-amber-700 rounded-lg flex items-center justify-center">
                         <i data-lucide="mail" class="w-6 h-6 text-white"></i>
                     </div>
                     <div class="text-left">
                         <p class="font-medium text-slate-300">Email</p>
-                        <p class="text-blue-400">obaidnasir01@gmail.com</p>
+                        <p class="text-amber-600">obaidnasir01@gmail.com</p>
                     </div>
                 </a>
 
                 <!-- LinkedIn -->
                 <a href="https://linkedin.com/in/obaidnasir38" target="_blank" rel="noopener noreferrer" class="contact-btn flex items-center gap-4 p-6 bg-slate-800 rounded-xl mb-4 hover:bg-slate-700">
-                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <div class="w-12 h-12 bg-amber-700 rounded-lg flex items-center justify-center">
                         <i data-lucide="linkedin" class="w-6 h-6 text-white"></i>
                     </div>
                     <div class="text-left">
                         <p class="font-medium text-slate-300">LinkedIn</p>
-                        <p class="text-blue-400">linkedin.com/in/obaidnasir38</p>
+                        <p class="text-amber-600">linkedin.com/in/obaidnasir38</p>
                     </div>
                 </a>
 
                 <!-- GitHub -->
                 <a href="https://github.com/obaidnasir38" target="_blank" rel="noopener noreferrer" class="contact-btn flex items-center gap-4 p-6 bg-slate-800 rounded-xl mb-8 hover:bg-slate-700">
-                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <div class="w-12 h-12 bg-amber-700 rounded-lg flex items-center justify-center">
                         <i data-lucide="github" class="w-6 h-6 text-white"></i>
                     </div>
                     <div class="text-left">
                         <p class="font-medium text-slate-300">GitHub</p>
-                        <p class="text-blue-400">github.com/obaidnasir38</p>
+                        <p class="text-amber-600">github.com/obaidnasir38</p>
                     </div>
                 </a>
 
                 <!-- Download CV Button -->
-                <a href="#" id="cv-download" class="contact-btn block w-full p-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl text-center font-bold text-white text-lg">
+                <a href="#" id="cv-download" class="contact-btn block w-full p-6 bg-gradient-to-r from-amber-700 to-orange-800 rounded-xl text-center font-bold text-white text-lg">
                     <div class="flex items-center justify-center gap-3">
                         <i data-lucide="download" class="w-6 h-6"></i>
                         <span>Download CV</span>
@@ -677,13 +677,13 @@
             // Update tab button styles
             const allTabs = document.querySelectorAll('.tab-btn');
             allTabs.forEach(tab => {
-                tab.classList.remove('bg-blue-500', 'text-white');
+                tab.classList.remove('bg-amber-700', 'text-white');
                 tab.classList.add('text-slate-400');
             });
 
             // Highlight active tab
             const activeTab = document.getElementById('tab-' + tabName);
-            activeTab.classList.add('bg-blue-500', 'text-white');
+            activeTab.classList.add('bg-amber-700', 'text-white');
             activeTab.classList.remove('text-slate-400');
         }
 
