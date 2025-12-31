@@ -17,6 +17,59 @@
             scroll-behavior: smooth;
         }
 
+        /* Modern Navbar Styles */
+        .modern-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 13, 11, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #A0522D, transparent);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .nav-link.active {
+            color: #D2B48C;
+        }
+
+        /* Hero Enhancements */
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(160, 82, 45, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .tab-content {
             animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -32,20 +85,33 @@
             }
         }
 
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         .glassmorphism {
-            background: rgba(62, 39, 35, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(210, 180, 140, 0.1);
+            background: rgba(62, 39, 35, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(210, 180, 140, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .project-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(30, 20, 15, 0.6);
+            border: 1px solid rgba(210, 180, 140, 0.1);
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(160, 82, 45, 0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(160, 82, 45, 0.3), 0 0 0 1px rgba(210, 180, 140, 0.2);
+            border-color: rgba(210, 180, 140, 0.3);
         }
 
         .timeline-item {
@@ -81,11 +147,16 @@
 
         .skill-tag {
             transition: all 0.3s ease;
+            background: rgba(30, 20, 15, 0.6);
+            border: 1px solid rgba(210, 180, 140, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .skill-tag:hover {
-            background: #A0522D;
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(160, 82, 45, 0.4);
+            border-color: #D2B48C;
         }
 
         .contact-btn {
@@ -168,65 +239,77 @@
         }
     </style>
 </head>
-<body class="min-h-screen text-slate-200" style="background: linear-gradient(135deg, #1a1410 0%, #0f0d0b 100%);">
+<body class="min-h-screen text-slate-200 pt-20" style="background: linear-gradient(135deg, #1a1410 0%, #0f0d0b 100%);">
+
+    <!-- Modern Top Navbar -->
+    <nav class="modern-navbar">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Name -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-600 to-orange-800 flex items-center justify-center font-bold text-white text-lg">
+                        ON
+                    </div>
+                    <span class="font-bold text-lg text-slate-200 hidden md:block">Obaidullah Nasir</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="flex items-center gap-8">
+                    <button onclick="switchTab('projects')" id="nav-projects" class="nav-link active text-sm font-medium px-4 py-2 transition-colors">
+                        Projects
+                    </button>
+                    <button onclick="switchTab('journey')" id="nav-journey" class="nav-link text-sm font-medium px-4 py-2 text-slate-400 hover:text-slate-200 transition-colors">
+                        My Journey
+                    </button>
+                    <button onclick="switchTab('contact')" id="nav-contact" class="nav-link text-sm font-medium px-4 py-2 text-slate-400 hover:text-slate-200 transition-colors">
+                        Contact
+                    </button>
+                    <a href="#" id="cv-download-nav" class="px-5 py-2 bg-gradient-to-r from-amber-700 to-orange-800 rounded-lg text-sm font-medium text-white hover:shadow-lg hover:shadow-amber-700/30 transition-all">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <header class="container mx-auto px-4 py-12 md:py-20">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-orange-800 bg-clip-text text-transparent">
+    <header class="relative container mx-auto px-4 py-16 md:py-24">
+        <div class="hero-gradient"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="mb-6 inline-block">
+                <span class="px-4 py-2 bg-gradient-to-r from-amber-900/30 to-orange-900/30 border border-amber-700/30 rounded-full text-sm text-amber-300 backdrop-blur-sm">
+                    <i data-lucide="sparkles" class="w-4 h-4 inline mr-2"></i>
+                    AI Application Engineer
+                </span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-amber-600 to-orange-800 bg-clip-text text-transparent leading-tight">
                 Obaidullah Nasir
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 mb-3">
-                AI Application Engineer
-            </p>
 
             <!-- Intro Tagline -->
-            <p class="max-w-3xl mx-auto text-sm md:text-base text-slate-400 italic leading-relaxed mb-4 px-4">
-                Building production RAG, Agentic AI, and Computer Vision systems across defense, automotive, and enterprise sectors.
+            <p class="max-w-3xl mx-auto text-base md:text-lg text-slate-300 leading-relaxed mb-6 px-4">
+                Building production <span class="text-amber-500 font-semibold">RAG</span>, <span class="text-amber-500 font-semibold">Agentic AI</span>, and <span class="text-amber-500 font-semibold">Computer Vision</span> systems across defense, automotive, and enterprise sectors.
             </p>
 
-            <div class="flex items-center justify-center gap-2 text-slate-400">
+            <div class="flex items-center justify-center gap-2 text-slate-400 mb-10">
                 <i data-lucide="map-pin" class="w-4 h-4"></i>
                 <span>Islamabad, Pakistan</span>
             </div>
 
             <!-- Tech Stack Pills -->
-            <div class="flex flex-wrap justify-center gap-2 mt-6">
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">Computer Vision</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">NLP / LLM</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">RAG</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">Agentic AI</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">Full Stack Development</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">Edge AI</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">MLOps</span>
-                <span class="skill-tag px-3 py-1 bg-slate-800 rounded-full text-sm text-slate-300">Multi-Modal AI</span>
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">Computer Vision</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">NLP / LLM</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">RAG</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">Agentic AI</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">Full Stack</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">Edge AI</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">MLOps</span>
+                <span class="skill-tag px-4 py-2 rounded-full text-sm text-slate-200 font-medium">Multi-Modal AI</span>
             </div>
         </div>
     </header>
-
-    <!-- Glassmorphism Tab Navigation -->
-    <nav class="sticky top-4 z-50 container mx-auto px-4 mb-12">
-        <div class="max-w-2xl mx-auto glassmorphism rounded-2xl p-2 flex gap-2">
-            <button onclick="switchTab('projects')" id="tab-projects" class="tab-btn flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 bg-amber-700 text-white">
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="briefcase" class="w-4 h-4"></i>
-                    <span>Projects</span>
-                </div>
-            </button>
-            <button onclick="switchTab('journey')" id="tab-journey" class="tab-btn flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 text-slate-400 hover:text-slate-200">
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="route" class="w-4 h-4"></i>
-                    <span>My Journey</span>
-                </div>
-            </button>
-            <button onclick="switchTab('contact')" id="tab-contact" class="tab-btn flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 text-slate-400 hover:text-slate-200">
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>Contact</span>
-                </div>
-            </button>
-        </div>
-    </nav>
 
     <!-- Tab Content Container -->
     <main class="container mx-auto px-4 pb-20">
@@ -658,6 +741,7 @@
 
             // CV Download
             document.getElementById('cv-download').href = IMAGE_CONFIG.cv;
+            document.getElementById('cv-download-nav').href = IMAGE_CONFIG.cv;
 
             // Handle image load errors with placeholder text
             const allImages = document.querySelectorAll('img[id^="img-"], img[id^="logo-"]');
@@ -682,17 +766,20 @@
             // Show selected tab content
             document.getElementById('content-' + tabName).classList.remove('hidden');
 
-            // Update tab button styles
-            const allTabs = document.querySelectorAll('.tab-btn');
-            allTabs.forEach(tab => {
-                tab.classList.remove('bg-amber-700', 'text-white');
-                tab.classList.add('text-slate-400');
+            // Update navbar links
+            const allNavLinks = document.querySelectorAll('.nav-link');
+            allNavLinks.forEach(link => {
+                link.classList.remove('active');
+                link.classList.add('text-slate-400');
             });
 
-            // Highlight active tab
-            const activeTab = document.getElementById('tab-' + tabName);
-            activeTab.classList.add('bg-amber-700', 'text-white');
-            activeTab.classList.remove('text-slate-400');
+            // Highlight active nav link
+            const activeNavLink = document.getElementById('nav-' + tabName);
+            activeNavLink.classList.add('active');
+            activeNavLink.classList.remove('text-slate-400');
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // ========================================
