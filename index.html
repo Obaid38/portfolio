@@ -57,6 +57,73 @@
             color: #D2B48C;
         }
 
+        /* Mobile Menu Styles */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-button span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #D2B48C;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: rgba(15, 13, 11, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+            padding: 1rem;
+            z-index: 999;
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.1);
+        }
+
+        .mobile-menu .nav-link:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none !important;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+            }
+        }
+
         /* Hero Enhancements */
         .hero-gradient {
             position: absolute;
@@ -237,24 +304,100 @@
         .project-card img:hover {
             transform: scale(1.02);
         }
+
+        /* Mobile Responsive Improvements */
+        @media (max-width: 768px) {
+            /* Hero adjustments */
+            .hero-gradient {
+                width: 600px;
+                height: 600px;
+            }
+
+            /* Reduce hero padding on mobile */
+            header {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            /* Better font sizes for mobile */
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            /* Section headers */
+            .flex.items-center.gap-3 {
+                flex-wrap: wrap;
+            }
+
+            /* Project cards - full width on mobile */
+            .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Tech stack pills - better wrapping */
+            .skill-tag {
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+            }
+
+            /* Contact buttons - better mobile sizing */
+            .contact-btn {
+                padding: 1rem !important;
+            }
+
+            /* Timeline - less padding on mobile */
+            .timeline-item {
+                padding-left: 2rem;
+            }
+
+            .timeline-item::before {
+                left: 0.5rem;
+            }
+
+            .timeline-dot {
+                left: 0.125rem;
+            }
+
+            /* Better touch targets */
+            button, a {
+                min-height: 44px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen text-slate-200 pt-20" style="background: linear-gradient(135deg, #1a1410 0%, #0f0d0b 100%);">
 
     <!-- Modern Top Navbar -->
     <nav class="modern-navbar">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo/Name -->
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-600 to-orange-800 flex items-center justify-center font-bold text-white text-lg">
                         ON
                     </div>
-                    <span class="font-bold text-lg text-slate-200 hidden md:block">Obaidullah Nasir</span>
+                    <span class="font-bold text-lg text-slate-200 hidden sm:block">Obaidullah Nasir</span>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="flex items-center gap-8">
+                <!-- Desktop Navigation Links -->
+                <div class="desktop-menu flex items-center gap-8">
                     <button onclick="switchTab('projects')" id="nav-projects" class="nav-link active text-sm font-medium px-4 py-2 transition-colors">
                         Projects
                     </button>
@@ -268,7 +411,30 @@
                         Download CV
                     </a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <button onclick="switchTab('projects'); toggleMobileMenu();" id="nav-projects-mobile" class="nav-link active text-base font-medium">
+                Projects
+            </button>
+            <button onclick="switchTab('journey'); toggleMobileMenu();" id="nav-journey-mobile" class="nav-link text-base font-medium text-slate-400">
+                My Journey
+            </button>
+            <button onclick="switchTab('contact'); toggleMobileMenu();" id="nav-contact-mobile" class="nav-link text-base font-medium text-slate-400">
+                Contact
+            </button>
+            <a href="#" id="cv-download-mobile" class="block mt-4 px-5 py-3 bg-gradient-to-r from-amber-700 to-orange-800 rounded-lg text-center font-medium text-white">
+                Download CV
+            </a>
         </div>
     </nav>
 
@@ -742,6 +908,7 @@
             // CV Download
             document.getElementById('cv-download').href = IMAGE_CONFIG.cv;
             document.getElementById('cv-download-nav').href = IMAGE_CONFIG.cv;
+            document.getElementById('cv-download-mobile').href = IMAGE_CONFIG.cv;
 
             // Handle image load errors with placeholder text
             const allImages = document.querySelectorAll('img[id^="img-"], img[id^="logo-"]');
@@ -751,6 +918,14 @@
                     this.alt = 'Image: ' + this.id.replace('img-', '').replace('logo-', '');
                 };
             });
+        }
+
+        // ========================================
+        // MOBILE MENU FUNCTIONALITY
+        // ========================================
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
         }
 
         // ========================================
@@ -766,17 +941,26 @@
             // Show selected tab content
             document.getElementById('content-' + tabName).classList.remove('hidden');
 
-            // Update navbar links
+            // Update desktop navbar links
             const allNavLinks = document.querySelectorAll('.nav-link');
             allNavLinks.forEach(link => {
                 link.classList.remove('active');
                 link.classList.add('text-slate-400');
             });
 
-            // Highlight active nav link
+            // Highlight active desktop nav link
             const activeNavLink = document.getElementById('nav-' + tabName);
-            activeNavLink.classList.add('active');
-            activeNavLink.classList.remove('text-slate-400');
+            if (activeNavLink) {
+                activeNavLink.classList.add('active');
+                activeNavLink.classList.remove('text-slate-400');
+            }
+
+            // Highlight active mobile nav link
+            const activeMobileNavLink = document.getElementById('nav-' + tabName + '-mobile');
+            if (activeMobileNavLink) {
+                activeMobileNavLink.classList.add('active');
+                activeMobileNavLink.classList.remove('text-slate-400');
+            }
 
             // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
